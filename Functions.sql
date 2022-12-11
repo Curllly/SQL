@@ -38,9 +38,9 @@ WHERE CHARINDEX('å', subj_name) > 0;
 SELECT SYSDATETIME(); -- 4 
 SELECT GETDATE();
 
-SELECT exam_date, DATEADD(year, 100, exam_date) FROM exam;
-SELECT exam_date, DATEADD(day, 25, exam_date) FROM exam;
-SELECT exam_date, DATEADD(month, 10, exam_date) FROM exam;
+SELECT exam_date, DATEADD(year, 100, exam_date) FROM exam WHERE student_id = 1;
+SELECT exam_date, DATEADD(day, 25, exam_date) FROM exam WHERE student_id = 1;
+SELECT exam_date, DATEADD(month, 10, exam_date) FROM exam WHERE student_id = 1;
 
 DECLARE @maxId int -- 5
 SET @maxId = (SELECT max(student_id) FROM student)
